@@ -1,0 +1,15 @@
+@import "../../../../variables";
+
+.category {
+  margin: 1rem;
+  padding: 1rem;
+  width: fit-content;
+  background-color: $main-color;
+  border-radius: 1rem;
+  color: $main-font-color;
+}
+
+.category:hover {
+  background-color: grey;
+  cursor: pointer;
+}
