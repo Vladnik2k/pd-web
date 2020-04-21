@@ -3,24 +3,24 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {GoodsComponent} from './goods/goods.component';
-import {CategoriesComponent} from './goods/categories/categories.component';
-import {CategoryComponent} from './goods/categories/category/category.component';
-import {CategoriesService} from './goods/categories.service';
+import {CategoriesComponent} from './product-page/categories/categories.component';
+import {CategoryComponent} from './product-page/categories/category/category.component';
+import {CategoryService} from './shared/services/category.service';
 import {HttpClientModule} from '@angular/common/http';
-import { HeaderComponent } from './header/header.component';
-import { GoodsInfoComponent } from './goods/goods-container/goods-info/goods-info.component';
-import { GoodsContainerComponent } from './goods/goods-container/goods-container.component';
+import {HeaderComponent} from './header/header.component';
+import {ProductPageComponent} from './product-page/product-page.component';
+import { ProductsComponent } from './product-page/products/products.component';
+import { ProductComponent } from './product-page/products/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GoodsComponent,
     CategoriesComponent,
     CategoryComponent,
     HeaderComponent,
-    GoodsInfoComponent,
-    GoodsContainerComponent
+    ProductPageComponent,
+    ProductsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,7 @@ import { GoodsContainerComponent } from './goods/goods-container/goods-container
     HttpClientModule
   ],
   providers: [
-    CategoriesService
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })
