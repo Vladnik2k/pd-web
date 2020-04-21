@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CategoryModel} from '../../../objects/CategoryModel';
+import {CategoryModel} from '../../../shared/objects/CategoryModel';
 
 @Component({
   selector: 'app-category',
@@ -9,6 +9,7 @@ import {CategoryModel} from '../../../objects/CategoryModel';
 export class CategoryComponent implements OnInit {
 
   @Input() category: CategoryModel;
+
   constructor() { }
 
   ngOnInit() {
