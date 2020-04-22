@@ -1,2 +1,6 @@
-<app-categories [categories]="categories"></app-categories>
+<app-filter
+  [categories]="categories"
+  (changeCategories)="updateCategories($event)"
+  (changeText)="updateSearchText($event)"
+></app-filter>
 <app-products [products]="products"></app-products>

@@ -1,0 +1,29 @@
+<div class="filter">
+  <div class="select">
+    <label for="select">Категорії: </label>
+    <select name="select" id="select" (change)="addCategory($event)">
+      <option value="0">Оберіть категорію</option>
+      <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.name }}</option>
+    </select>
+  </div>
+
+  <div class="search">
+    <label for="search">Пошук за назвою: </label>
+    <input id="search" type="text" (change)="changeSearchText($event)">
+  </div>
+
+  <ng5-slider *ngIf="maxPrice"
+              [(value)]="minPrice"
+              [(highValue)]="maxPrice"
+              [options]="options"
+              (highValueChange)="changeValue($event)"
+  ></ng5-slider>
+</div>
+
+<div class="category-container">
+  <app-category
+    *ngFor="let category of chosenCategories"
+    (removeCategory)="removeCategory($event)"
+    [category]="category"
+  ></app-category>
+</div>

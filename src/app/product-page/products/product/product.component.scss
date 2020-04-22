@@ -1,13 +1,35 @@
 @import "../../../../variables";
 
 .product {
-  width: 20rem;
-  height: 20rem;
+  width: 25rem;
+  height: 15rem;
   background-color: $main-color;
   overflow: hidden;
 
-  display: flex;
+  position: relative;
 
-  img {
+  .product-info {
+    position: absolute;
+
+    height: 25%;
+    width: 100%;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: $red-color;
+      width: fit-content;
+      height: 100%;
+      padding: 0 1rem;
+
+      font-size: 1.5em;
+      color: $main-font-color;
+    }
   }
 }
