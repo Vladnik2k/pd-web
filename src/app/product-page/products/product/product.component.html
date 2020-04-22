@@ -1,6 +1,10 @@
 <div class="product">
   <img src=" {{ product.imageUrl }} " alt=" {{ product.name }} ">
 
+  <div class="bucket" (click)="bucket()">
+    В корзину
+  </div>
+
   <div class="product-info">
     <div>
       <span>{{ product.name }} ({{product.price}} грн)</span>

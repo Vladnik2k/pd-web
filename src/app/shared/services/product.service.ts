@@ -12,8 +12,12 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getProduct(categories: number[], search: string): Observable<ProductModel[]> {
-    return this.httpClient.post<ProductModel[]>(this.url, { categoryIds: categories, searchText: search } );
+  getProductsByFilter(categories: number[], search: string): Observable<ProductModel[]> {
+    return this.httpClient.post<ProductModel[]>(`${this.url}/filter`, { categoryIds: categories, searchText: search } );
+  }
+
+  getProductsByIds(productIds: number[]): Observable<ProductModel[]> {
+    return this.httpClient.post<ProductModel[]>(`${this.url}/ids`, productIds);
   }
 
   getMaxPrice(): Observable<number> {
