@@ -1,0 +1,24 @@
+<div class="bucket-page">
+  <div class="product" *ngFor="let product of bucketProducts">
+    <div class="plus" (click)="addProduct(product.id)">+</div>
+    <div class="product-info">
+      <div class="name">
+        <b>{{ product.name }}</b>
+      </div>
+      <div class="price">
+        Кількість: {{ product.quantity }}. Сума: {{ product.priceAll }} грн
+      </div>
+    </div>
+    <div class="minus" (click)="deleteProduct(product.id)">-</div>
+  </div>
+</div>
+
+<div class="bucket-page-footer">
+  <div class="bucket-info">
+    Сума замовлення: <b>{{ allSum }} грн</b>
+  </div>
+
+  <div class="submit-order" (click)="goToOrderForm()">
+    Замовити
+  </div>
+</div>

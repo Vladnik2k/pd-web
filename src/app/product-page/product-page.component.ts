@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CategoryService} from '../shared/services/category.service';
 import {ProductService} from '../shared/services/product.service';
 import {ProductModel} from '../shared/objects/product.model';
 import {CategoryModel} from '../shared/objects/category.model';
-import {LabelType, Options} from 'ng5-slider';
-import {combineLatest} from 'rxjs';
+import {BucketService} from '../shared/services/bucket.service';
 
 @Component({
   selector: 'app-product-page',
@@ -19,7 +18,8 @@ export class ProductPageComponent implements OnInit {
   searchText = '';
 
   constructor(private categoryService: CategoryService,
-              private productService: ProductService) {
+              private productService: ProductService,
+              private bucketService: BucketService) {
     this.categoryService.getCategories()
       .subscribe(categories => this.categories = categories);
     this.updateProducts();
@@ -29,7 +29,7 @@ export class ProductPageComponent implements OnInit {
   }
 
   updateProducts(): void {
-    this.productService.getProduct(this.chosenCategories.map(category => category.id), this.searchText)
+    this.productService.getProductsByFilter(this.chosenCategories.map(category => category.id), this.searchText)
       .subscribe(products => this.products = products);
   }
 
@@ -41,6 +41,10 @@ export class ProductPageComponent implements OnInit {
   updateSearchText(searchText: string): void {
     this.searchText = searchText;
     this.updateProducts();
+  }
+
+  addProductToBucket(productId: number): void {
+    this.bucketService.addProduct(productId);
   }
 
 }

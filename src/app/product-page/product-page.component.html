@@ -5,5 +5,8 @@
     (changeText)="updateSearchText($event)"
   ></app-filter>
 
-  <app-products [products]="products"></app-products>
+  <app-products
+    [products]="products"
+    (addProductToBucket)="addProductToBucket($event)"
+  ></app-products>
 </div>

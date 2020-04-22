@@ -1,0 +1,70 @@
+@import "../../variables";
+
+.bucket-page {
+  padding: 4rem 1rem 3rem;
+
+  .product {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    .plus, .minus {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      text-align: center;
+
+      line-height: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .plus {
+      font-size: 2.5rem;
+      background-color: $green-color;
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        text-align: center;
+      }
+    }
+
+    .minus {
+      font-size: 2.1rem;
+      background-color: $red-color;
+    }
+  }
+}
+
+.bucket-page-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: fit-content;
+  background-color: $main-color;
+  color: $main-font-color;
+  z-index: 10000;
+
+  .bucket-info {
+    margin: 1rem;
+  }
+
+  .submit-order {
+    padding: 1rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: black;
+    background-color: $green-color;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ProductModel} from '../../../shared/objects/product.model';
 
 @Component({
@@ -10,9 +10,15 @@ export class ProductComponent implements OnInit {
 
   @Input() product: ProductModel;
 
+  @Output() addToBucket: EventEmitter<number> = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  bucket(): void {
+    this.addToBucket.emit(this.product.id);
   }
 
 }
