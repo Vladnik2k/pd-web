@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {CategoryModel} from '../objects/CategoryModel';
+import {CategoryModel} from '../objects/category.model';
 import {Constants} from '../Constants';
 
 @Injectable({

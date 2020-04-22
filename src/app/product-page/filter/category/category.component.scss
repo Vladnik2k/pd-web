@@ -1,0 +1,24 @@
+@import "../../../../variables";
+
+.category {
+  padding: 1rem 3rem 1rem 1rem;
+  width: fit-content;
+  background-color: $main-color;
+  border-radius: 1rem;
+  color: $main-font-color;
+  position: relative;
+  overflow: hidden;
+
+  .remove {
+    position: absolute;
+    background-color: $light-red-color;
+    padding: 1rem;
+    right: 0;
+    top: 0;
+
+    &:hover {
+      background-color: $red-color;
+      cursor: pointer;
+    }
+  }
+}

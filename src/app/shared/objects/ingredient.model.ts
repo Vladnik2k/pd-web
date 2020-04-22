@@ -1,4 +1,4 @@
-import {UnitModel} from './UnitModel';
+import {UnitModel} from './unit.model';
 
 export interface IngredientModel {
 

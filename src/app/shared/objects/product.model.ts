@@ -1,4 +1,4 @@
-import {IngredientModel} from './IngredientModel';
+import {IngredientModel} from './ingredient.model';
 
 export interface ProductModel {
 
