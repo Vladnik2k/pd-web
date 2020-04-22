@@ -41,7 +41,6 @@ export class FilterComponent implements OnInit {
   ngOnInit() {
     combineLatest(this.productService.getMinPrice(), this.productService.getMaxPrice()).subscribe((range) => {
       this.minPrice = range[0];
-      console.log(this.minPrice);
       this.maxPrice = range[1];
       this.options.floor = range[0];
       this.options.ceil = range[1];

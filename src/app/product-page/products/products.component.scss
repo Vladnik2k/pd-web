@@ -1,9 +1,21 @@
 .product-container {
   display: flex;
+  align-content: center;
   flex-wrap: wrap;
 
   app-product {
-    margin: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+@media (min-width: 420px) {
+  .product-container {
+    justify-content: space-around;
   }
 
+  app-product {
+    margin: 1rem 0.5rem 0;
+    width: 23rem !important;
+  }
 }
