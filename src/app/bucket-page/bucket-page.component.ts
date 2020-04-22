@@ -6,11 +6,11 @@ import {BucketProductModel} from '../shared/objects/bucket-product.model';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-bucket',
-  templateUrl: './bucket.component.html',
-  styleUrls: ['./bucket.component.scss']
+  selector: 'app-bucket-page',
+  templateUrl: './bucket-page.component.html',
+  styleUrls: ['./bucket-page.component.scss']
 })
-export class BucketComponent implements OnInit {
+export class BucketPageComponent implements OnInit {
 
   products: ProductModel[] = [];
   bucketProducts: BucketProductModel[] = [];

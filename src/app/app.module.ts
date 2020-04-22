@@ -13,7 +13,7 @@ import { ProductComponent } from './product-page/products/product/product.compon
 import {CategoryComponent} from './product-page/filter/category/category.component';
 import {Ng5SliderModule} from 'ng5-slider';
 import { MainPageComponent } from './main-page/main-page.component';
-import { BucketComponent } from './bucket/bucket.component';
+import { BucketPageComponent } from './bucket-page/bucket-page.component';
 import {LocalStorageService} from './shared/services/local-storage.service';
 import {ProductService} from './shared/services/product.service';
 import {BucketService} from './shared/services/bucket.service';
@@ -28,7 +28,7 @@ import {BucketService} from './shared/services/bucket.service';
     ProductsComponent,
     ProductComponent,
     MainPageComponent,
-    BucketComponent,
+    BucketPageComponent,
   ],
   imports: [
     BrowserModule,
