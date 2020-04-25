@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {ProductPageComponent} from './product-page/product-page.component';
 import {MainPageComponent} from './main-page/main-page.component';
 import {BucketPageComponent} from './bucket-page/bucket-page.component';
+import {OrderPageComponent} from './order-page/order-page.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'bucket',
     component: BucketPageComponent
+  },
+  {
+    path: 'order',
+    component: OrderPageComponent
   },
   {
     path: '**',

@@ -17,6 +17,9 @@ import { BucketPageComponent } from './bucket-page/bucket-page.component';
 import {LocalStorageService} from './shared/services/local-storage.service';
 import {ProductService} from './shared/services/product.service';
 import {BucketService} from './shared/services/bucket.service';
+import { OrderPageComponent } from './order-page/order-page.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {OrderService} from './shared/services/order.service';
 
 @NgModule({
   declarations: [
@@ -29,18 +32,23 @@ import {BucketService} from './shared/services/bucket.service';
     ProductComponent,
     MainPageComponent,
     BucketPageComponent,
+    OrderPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    Ng5SliderModule
+    Ng5SliderModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     CategoryService,
     ProductService,
     LocalStorageService,
-    BucketService
+    BucketService,
+    CategoryService,
+    OrderService
   ],
   bootstrap: [AppComponent]
 })
