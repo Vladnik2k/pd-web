@@ -1,0 +1,26 @@
+<div class="order-page">
+  <form class="form" [formGroup]="form">
+    <div class="form-field">
+      <label for="email">Email: </label>
+      <input id="email" formControlName="email" type="text">
+    </div>
+    <div class="form-field">
+      <label for="customerName">Ім'я: </label>
+      <input id="customerName" formControlName="customerName" type="text">
+    </div>
+    <div class="form-field">
+      <label for="customerSurname">Призвіще: </label>
+      <input id="customerSurname" formControlName="customerSurname" type="text">
+    </div>
+    <div class="form-field">
+      <label for="deliveryAddress">Адреса доставки: </label>
+      <input id="deliveryAddress" formControlName="deliveryAddress" type="text">
+    </div>
+
+    <div class="form-submit" (click)="submitOrder()">
+      <div>
+        Підтвердити замовлення
+      </div>
+    </div>
+  </form>
+</div>

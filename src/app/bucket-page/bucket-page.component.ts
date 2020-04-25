@@ -60,6 +60,6 @@ export class BucketPageComponent implements OnInit {
   }
 
   goToOrderForm() {
-    this.router.navigate(['/submit-order']);
+    this.router.navigate(['/order']);
   }
 }
