@@ -1,10 +1,11 @@
 export interface OrderModel {
   id: number;
   email: string;
-  status: number;
+  status: string;
   deliveryAddress: string;
   customerName: string;
   customerSurname: string;
   price: number;
+  products: string;
 
 }

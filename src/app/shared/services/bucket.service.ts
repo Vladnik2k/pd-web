@@ -41,4 +41,8 @@ export class BucketService {
     this.storageService.save(this.bucketName, JSON.stringify(Array.from(products.entries())));
   }
 
+  clearBucket(): void {
+    this.storageService.remove(this.bucketName);
+  }
+
 }

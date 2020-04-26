@@ -17,9 +17,10 @@ import { BucketPageComponent } from './bucket-page/bucket-page.component';
 import {LocalStorageService} from './shared/services/local-storage.service';
 import {ProductService} from './shared/services/product.service';
 import {BucketService} from './shared/services/bucket.service';
-import { OrderPageComponent } from './order-page/order-page.component';
+import { OrderSubmittingPageComponent } from './order-submitting-page/order-submitting-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OrderService} from './shared/services/order.service';
+import { OrderPageComponent } from './order-page/order-page.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {OrderService} from './shared/services/order.service';
     ProductComponent,
     MainPageComponent,
     BucketPageComponent,
+    OrderSubmittingPageComponent,
     OrderPageComponent,
   ],
   imports: [

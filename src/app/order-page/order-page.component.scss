@@ -1,29 +1,16 @@
-@import "../../variables";
-
 .order-page {
-  padding: 4rem 1rem 1rem 1rem;
+  padding: 4rem 1rem 1rem;
 
-  .form-field {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    align-items: center;
-  }
+  .some-class {
+    margin: 0.5rem 0;
 
-  .form-submit {
-    position: fixed;
-    width: 100%;
-    bottom: 1rem;
-    left: 0;
-    display: flex;
-    justify-content: center;
-
-    div {
-      cursor: pointer;
-      padding: 1rem;
-      background-color: $green-color;
+    .products {
+      padding: 0 1rem;
     }
-
   }
+}
 
+.empty-order {
+  padding: 4rem 0;
+  text-align: center;
 }
