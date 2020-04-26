@@ -1,26 +1,32 @@
-<div class="order-page">
-  <form class="form" [formGroup]="form">
-    <div class="form-field">
-      <label for="email">Email: </label>
-      <input id="email" formControlName="email" type="text">
-    </div>
-    <div class="form-field">
-      <label for="customerName">Ім'я: </label>
-      <input id="customerName" formControlName="customerName" type="text">
-    </div>
-    <div class="form-field">
-      <label for="customerSurname">Призвіще: </label>
-      <input id="customerSurname" formControlName="customerSurname" type="text">
-    </div>
-    <div class="form-field">
-      <label for="deliveryAddress">Адреса доставки: </label>
-      <input id="deliveryAddress" formControlName="deliveryAddress" type="text">
-    </div>
-
-    <div class="form-submit" (click)="submitOrder()">
+<div *ngIf="order" class="order-page">
+  <div class="some-class">
+    <b>Ім'я:</b> {{ order.customerName }}
+  </div>
+  <div class="some-class">
+    <b>Призвіще:</b> {{ order.customerSurname }}
+  </div>
+  <div class="some-class">
+    <b>Email:</b> {{ order.email }}
+  </div>
+  <div class="some-class">
+    <b>Сума замовлення:</b> {{ order.price }} грн
+  </div>
+  <div class="some-class">
+    <b>Адрес доставки:</b> {{ order.deliveryAddress }}
+  </div>
+  <div class="some-class">
+    <b>Статус доставки:</b> {{ order.status }}
+  </div>
+  <div class="some-class">
+    <b>Продукти замовлення:</b>
+    <div class="products" *ngFor="let product of products | keyvalue">
       <div>
-        Підтвердити замовлення
+        {{ product.key.name }} *{{ product.value }}
       </div>
     </div>
-  </form>
+  </div>
+</div>
+
+<div *ngIf="!order" class="empty-order">
+  Не знайдено жодного замовлення
 </div>

@@ -13,8 +13,12 @@ export class OrderService {
 
   constructor(private httpClient: HttpClient) {}
 
-  createOrder(newOrder: any): Observable<OrderModel[]> {
-    return this.httpClient.post<OrderModel[]>(this.url, newOrder);
+  createOrder(newOrder: any): Observable<number> {
+    return this.httpClient.post<number>(this.url, newOrder);
+  }
+
+  getOrderById(orderId: number): Observable<OrderModel> {
+    return this.httpClient.get<OrderModel>(`${this.url}/${orderId}`);
   }
 
 }
