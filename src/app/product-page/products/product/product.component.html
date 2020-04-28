@@ -1,7 +1,7 @@
-<div class="product">
-  <img src=" {{ product.imageUrl }} " alt=" {{ product.name }} ">
+<div class="product" [routerLink]="['/product/' + product.id]">
+  <img src="{{ product.imageUrl }}" alt=" {{ product.name }} ">
 
-  <div class="bucket" (click)="bucket()">
+  <div class="bucket" (click)="bucket($event)">
     В корзину
   </div>
 

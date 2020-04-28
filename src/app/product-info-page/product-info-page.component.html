@@ -1,0 +1,25 @@
+<div class="full-product">
+  <div *ngIf="product" class="product">
+    <img src="{{ product.imageUrl }}" alt="{{ product.name }}">
+    <div class="product-option">
+      <b>Назва:</b> {{ product.name }}
+    </div>
+    <div class="product-option">
+      <b>Ціна:</b> {{ product.price }}
+    </div>
+    <div class="product-option">
+      <b>Опис продукту:</b> {{ product.description }}
+    </div>
+    <div class="product-option">
+      <b>Склад:</b>
+      <div class="ingredients" *ngFor="let ingredient of ingredients">
+        <div>
+          {{ ingredient.name }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!product" class="empty-product">
+    Продукт не знайдений
+  </div>
+</div>

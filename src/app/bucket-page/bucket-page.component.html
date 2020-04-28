@@ -11,6 +11,10 @@
     </div>
     <div class="minus" (click)="deleteProduct(product.id)">-</div>
   </div>
+
+  <div *ngIf="!bucketProducts.length" class="bucket-empty">
+    Корзина пуста
+  </div>
 </div>
 
 <div class="bucket-page-footer">
@@ -20,5 +24,9 @@
 
   <div class="submit-order" (click)="goToOrderForm()">
     Замовити
+  </div>
+
+  <div *ngIf="showWarning" class="warning">
+    Спершу оберіть продукти в розділі "Продукція"
   </div>
 </div>

@@ -1,23 +1,23 @@
 <div *ngIf="order" class="order-page">
-  <div class="some-class">
+  <div class="order-option">
     <b>Ім'я:</b> {{ order.customerName }}
   </div>
-  <div class="some-class">
+  <div class="order-option">
     <b>Призвіще:</b> {{ order.customerSurname }}
   </div>
-  <div class="some-class">
+  <div class="order-option">
     <b>Email:</b> {{ order.email }}
   </div>
-  <div class="some-class">
+  <div class="order-option">
     <b>Сума замовлення:</b> {{ order.price }} грн
   </div>
-  <div class="some-class">
+  <div class="order-option">
     <b>Адрес доставки:</b> {{ order.deliveryAddress }}
   </div>
-  <div class="some-class">
+  <div class="order-option">
     <b>Статус доставки:</b> {{ order.status }}
   </div>
-  <div class="some-class">
+  <div class="order-option">
     <b>Продукти замовлення:</b>
     <div class="products" *ngFor="let product of products | keyvalue">
       <div>

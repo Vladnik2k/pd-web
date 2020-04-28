@@ -20,6 +20,10 @@ export class ProductService {
     return this.httpClient.post<ProductModel[]>(`${this.url}/ids`, productIds);
   }
 
+  getProductById(productId: number): Observable<ProductModel> {
+    return this.httpClient.get<ProductModel>(`${this.url}/${productId}`);
+  }
+
   getMaxPrice(): Observable<number> {
     return this.httpClient.get<number>(`${this.url}/max`);
   }

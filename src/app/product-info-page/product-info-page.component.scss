@@ -1,0 +1,21 @@
+@import "../../variables";
+
+.full-product {
+  padding: 4rem 1rem 1rem;
+
+  img {
+    width: 100%;
+  }
+
+  .product-option {
+    margin: 0.5rem 0;
+
+    .ingredients {
+      padding: 0 1rem;
+    }
+  }
+
+  .empty-product {
+    text-align: center;
+  }
+}
