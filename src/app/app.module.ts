@@ -21,6 +21,7 @@ import { OrderSubmittingPageComponent } from './order-submitting-page/order-subm
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OrderService} from './shared/services/order.service';
 import { OrderPageComponent } from './order-page/order-page.component';
+import { ProductInfoPageComponent } from './product-info-page/product-info-page.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { OrderPageComponent } from './order-page/order-page.component';
     BucketPageComponent,
     OrderSubmittingPageComponent,
     OrderPageComponent,
+    ProductInfoPageComponent,
   ],
   imports: [
     BrowserModule,

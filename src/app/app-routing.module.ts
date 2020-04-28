@@ -5,6 +5,7 @@ import {MainPageComponent} from './main-page/main-page.component';
 import {BucketPageComponent} from './bucket-page/bucket-page.component';
 import {OrderSubmittingPageComponent} from './order-submitting-page/order-submitting-page.component';
 import {OrderPageComponent} from './order-page/order-page.component';
+import {ProductInfoPageComponent} from './product-info-page/product-info-page.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductPageComponent
+  },
+  {
+    path: 'product/:productId',
+    component: ProductInfoPageComponent
   },
   {
     path: 'bucket',

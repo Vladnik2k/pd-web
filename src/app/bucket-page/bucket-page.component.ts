@@ -15,6 +15,8 @@ export class BucketPageComponent implements OnInit {
   products: ProductModel[] = [];
   bucketProducts: BucketProductModel[] = [];
 
+  showWarning = false;
+
   allSum = 0;
 
   constructor(private bucketService: BucketService,
@@ -60,6 +62,10 @@ export class BucketPageComponent implements OnInit {
   }
 
   goToOrderForm() {
-    this.router.navigate(['/order']);
+    if (this.bucketProducts.length <= 0) {
+      this.showWarning = true;
+    } else {
+      this.router.navigate(['/order']);
+    }
   }
 }

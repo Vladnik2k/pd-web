@@ -17,7 +17,8 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  bucket(): void {
+  bucket($event): void {
+    $event.stopPropagation();
     this.addToBucket.emit(this.product.id);
   }
 
