@@ -3,10 +3,8 @@
     [categories]="categories"
     (changeCategories)="updateCategories($event)"
     (changeText)="updateSearchText($event)"
+    (changePriceRange)="updatePrice($event)"
   ></app-filter>
 
-  <app-products
-    [products]="products"
-    (addProductToBucket)="addProductToBucket($event)"
-  ></app-products>
+  <app-products [products]="products"></app-products>
 </div>

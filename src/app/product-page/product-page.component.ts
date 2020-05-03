@@ -3,7 +3,6 @@ import {CategoryService} from '../shared/services/category.service';
 import {ProductService} from '../shared/services/product.service';
 import {ProductModel} from '../shared/objects/product.model';
 import {CategoryModel} from '../shared/objects/category.model';
-import {BucketService} from '../shared/services/bucket.service';
 
 @Component({
   selector: 'app-product-page',
@@ -16,10 +15,11 @@ export class ProductPageComponent implements OnInit {
   categories: CategoryModel[] = [];
   chosenCategories: CategoryModel[] = [];
   searchText = '';
+  minPrice: number = null;
+  maxPrice: number = null;
 
   constructor(private categoryService: CategoryService,
-              private productService: ProductService,
-              private bucketService: BucketService) {
+              private productService: ProductService) {
     this.categoryService.getCategories()
       .subscribe(categories => this.categories = categories);
     this.updateProducts();
@@ -29,7 +29,11 @@ export class ProductPageComponent implements OnInit {
   }
 
   updateProducts(): void {
-    this.productService.getProductsByFilter(this.chosenCategories.map(category => category.id), this.searchText)
+    this.productService.getProductsByFilter(
+      this.chosenCategories.map(category => category.id),
+      this.searchText,
+      this.minPrice,
+      this.maxPrice)
       .subscribe(products => this.products = products);
   }
 
@@ -43,8 +47,10 @@ export class ProductPageComponent implements OnInit {
     this.updateProducts();
   }
 
-  addProductToBucket(productId: number): void {
-    this.bucketService.addProduct(productId);
+  updatePrice(values: number[]): void {
+    this.minPrice = values[0];
+    this.maxPrice = values[1];
+    this.updateProducts();
   }
 
 }

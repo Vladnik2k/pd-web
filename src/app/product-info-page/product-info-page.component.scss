@@ -3,8 +3,13 @@
 .full-product {
   padding: 4rem 1rem 1rem;
 
-  img {
-    width: 100%;
+  .product-image {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+    }
   }
 
   .product-option {
@@ -17,5 +22,17 @@
 
   .empty-product {
     text-align: center;
+  }
+}
+
+@media (min-width: 420px) {
+  .full-product {
+    .product-image {
+      justify-content: flex-start;
+
+      img {
+        width: 24rem;
+      }
+    }
   }
 }

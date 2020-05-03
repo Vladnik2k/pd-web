@@ -13,20 +13,7 @@ import {ProductService} from '../../shared/services/product.service';
 export class FilterComponent implements OnInit {
 
   @Input() categories: CategoryModel[] = [];
-  options: Options = {
-    floor: 0,
-    ceil: 500,
-    translate: (value: number, label: LabelType): string => {
-      switch (label) {
-        case LabelType.Low:
-          return `<b>Мінімальна ціна:</b> ${value}`;
-        case LabelType.High:
-          return `<b>Максимальна ціна:</b> ${value}`;
-        default:
-          return value + ' грн';
-      }
-    }
-  };
+  options: Options = {};
   chosenCategories: CategoryModel[] = [];
   text = '';
   minPrice = 0;
@@ -34,6 +21,7 @@ export class FilterComponent implements OnInit {
 
   @Output() changeCategories: EventEmitter<CategoryModel[]> = new EventEmitter<CategoryModel[]>();
   @Output() changeText: EventEmitter<string> = new EventEmitter<string>();
+  @Output() changePriceRange: EventEmitter<number[]> = new EventEmitter<number[]>();
 
   constructor(private categoryService: CategoryService,
               private productService: ProductService) { }
@@ -70,6 +58,6 @@ export class FilterComponent implements OnInit {
   }
 
   changeValue($event): void {
-    console.log($event);
+    this.changePriceRange.emit([$event.value, $event.highValue]);
   }
 }

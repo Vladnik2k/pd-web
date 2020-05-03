@@ -1,5 +1,27 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  select, input {
+    width: 15rem;
+    margin: 0 1rem 1rem;
+    height: 2rem;
+  }
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+
+  ng5-slider {
+    max-width: 60rem;
+  }
+}
+
 .category-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 
   app-category {
