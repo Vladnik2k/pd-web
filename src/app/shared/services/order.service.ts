@@ -21,4 +21,12 @@ export class OrderService {
     return this.httpClient.get<OrderModel>(`${this.url}/${orderId}`);
   }
 
+  getNumberOfCustomers(): Observable<number> {
+    return this.httpClient.get<number>(`${this.url}/customers-count`);
+  }
+
+  getNumberOfActiveOrders(): Observable<number> {
+    return this.httpClient.get<number>(`${this.url}/active-orders`);
+  }
+
 }

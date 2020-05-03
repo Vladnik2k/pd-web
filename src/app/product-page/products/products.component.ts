@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ProductModel} from '../../shared/objects/product.model';
+import {BucketService} from '../../shared/services/bucket.service';
 
 @Component({
   selector: 'app-products',
@@ -10,15 +11,21 @@ export class ProductsComponent implements OnInit {
 
   @Input() products: ProductModel[] = [];
 
+  addedProduct: ProductModel;
+
   @Output() addProductToBucket: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() { }
+  constructor(private bucketService: BucketService) { }
 
   ngOnInit() {
   }
 
   addToBucket(productId): void {
-    this.addProductToBucket.emit(productId);
+    this.bucketService.addProduct(productId);
+    this.addedProduct = this.products.find(product => product.id === productId);
+    setTimeout(() => {
+      this.addedProduct = null;
+    }, 5000);
   }
 
 }

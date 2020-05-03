@@ -22,6 +22,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OrderService} from './shared/services/order.service';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { ProductInfoPageComponent } from './product-info-page/product-info-page.component';
+import { DiscountsPageComponent } from './discounts-page/discounts-page.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ProductInfoPageComponent } from './product-info-page/product-info-page.
     OrderSubmittingPageComponent,
     OrderPageComponent,
     ProductInfoPageComponent,
+    DiscountsPageComponent,
   ],
   imports: [
     BrowserModule,

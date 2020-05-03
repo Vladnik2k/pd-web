@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductService} from '../shared/services/product.service';
+import {OrderService} from '../shared/services/order.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  numberOfProducts: number;
+  numberOfCustomers: number;
+  numberOfDiscountProducts: number;
+  numberOfActiveOrders: number;
+
+  constructor(private productService: ProductService,
+              private orderService: OrderService) { }
 
   ngOnInit() {
+    this.productService.getNumberOfProducts().subscribe(count => this.numberOfProducts = count);
+    this.orderService.getNumberOfCustomers().subscribe(count => this.numberOfCustomers = count);
+    this.productService.getCountDiscountProducts().subscribe(count => this.numberOfDiscountProducts = count);
+    this.orderService.getNumberOfActiveOrders().subscribe(count => this.numberOfActiveOrders = count);
   }
 
 }
