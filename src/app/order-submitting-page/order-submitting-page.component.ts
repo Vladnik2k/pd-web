@@ -12,6 +12,7 @@ import {Router} from '@angular/router';
 export class OrderSubmittingPageComponent implements OnInit {
 
   form: FormGroup;
+  showError = false;
 
   constructor(private orderService: OrderService,
               private bucketService: BucketService,
@@ -33,7 +34,7 @@ export class OrderSubmittingPageComponent implements OnInit {
       .subscribe(orderId => {
         this.bucketService.clearBucket();
         this.router.navigate(['order/' + orderId]);
-    });
+    }, err => this.showError = true);
   }
 
   mapToObj(map: Map<number, number>): any {

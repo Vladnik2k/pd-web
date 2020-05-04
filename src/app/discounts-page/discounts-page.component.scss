@@ -11,10 +11,11 @@
     color: $main-font-color;
     font-size: 1.5rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
     span {
+      margin-left: 0.5rem;
       font-size: 3rem;
     }
   }
