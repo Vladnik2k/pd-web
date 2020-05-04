@@ -18,6 +18,9 @@
     </div>
 
     <div class="form-submit" (click)="submitOrder()">
+      <div *ngIf="showError" class="error-message">
+        Введено некоректні дані
+      </div>
       <div>
         Підтвердити замовлення
       </div>

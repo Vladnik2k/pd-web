@@ -26,4 +26,23 @@
 
   }
 
+  .error-message {
+    position: absolute;
+    top: -4rem;
+    padding: 1rem;
+    background: $red-color !important;
+    color: $main-font-color;
+  }
+
+}
+
+@media (min-width: 420px) {
+  .order-submitting-page {
+    display: flex;
+    justify-content: center;
+
+    .form {
+      width: 23rem;
+    }
+  }
 }
